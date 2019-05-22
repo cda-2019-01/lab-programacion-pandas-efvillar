@@ -5,3 +5,9 @@
 ## 
 
 
+import pandas as pd
+
+tabla = pd.read_csv('tbl2.tsv', sep='\t')
+tabla.sort_values('_c5a', inplace=True)
+tabla1 = tabla.groupby('_c5a')['_c5b'].sum()
+print (tabla1)
